@@ -1,6 +1,7 @@
 import socket
 import json
-#Listo
+import re
+#listo
 
 def getSize(size):
     count = 0
@@ -15,14 +16,55 @@ def getSize(size):
         count +=1
     return size
 
-def authenticate(username, password):
+def Usuarios(IDU, Nombre, Contra, Rol): #cod -> ID usuario
     with open('BDD/BDD.json') as file:
-        data = json.load(file)
-        usuarios = data['usuarios']
-        for user in usuarios:
-            if user["Nombre"] == username and user["Contra"] == password:
-                return user["ID_Usuario"], user["Rol"]
-    return False, False
+        usuarios = json.load(file)
+        #ID MAZO, NOMBRE MAZO, ID USUARIO
+    data = {
+        "ID_Usuario": IDU,
+        "Nombre": Nombre,
+        "Contra": Contra,
+        "Rol": Rol,
+        "Coleccion": [],
+        "Mazos": []
+    }
+    usuarios['usuarios'].append(data)
+
+    with open('BDD/BDD.json', 'w') as archivo:
+        json.dump(usuarios, archivo, indent=4)
+
+    return "Usuario_creado"
+
+def ID_Usuario():
+    a = ''
+    with open('BDD/BDD.json') as file:
+        read = json.load(file)
+    for i in read['usuarios']:
+        a = i["ID_Usuario"]
+        
+    return Size2(a)
+
+def Size2(a):
+    a = int(a)
+    return Size3(a + 1)
+
+def Size3(a):
+    size = ''
+    a = str(a)
+    if len(a) == 1:
+        size = '000' + a
+    elif len(a) == 2:
+        size = '00' + a
+    return size
+
+def verificar(nom):
+    a = False
+    with open('BDD/BDD.json') as file:
+        read = json.load(file)
+    for i in read['usuarios']:
+        if i["Nombre"] == nom:
+            a = True
+    return a
 
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -30,31 +72,33 @@ host = 'localhost'
 port = 5002
 
 sock.connect((host, port))
-sock.send(b'00010sinitlogin')
+sock.send(b'00010sinitcreus')
 data = sock.recv(4096)
-#print(data.decode())
+print(data.decode())
 try:
     while True:
         
         data = sock.recv(4096)
-        print(data.decode())
         data = data.decode()[10:]
-        data = data.split(' ')
-        print(data)
-        usuario = data[0]
-        passw = data[1]
-        service = 'login'
-        #print(usuario + " " + passw)
-        aux1, aux2 = authenticate(usuario,passw)
-        #print(aux1, aux2)
-        if aux1 == False:
-            sock.send(b'00017loginOKnofound')
+        nombre, contra = data.split(' ')
+        idu = ID_Usuario()
+        rol = 'usu'
+        service = 'creus'
+        aux = False
+        v = verificar(nombre)
+        aux1 = ''
+        if v == False:
+            aux1 = Usuarios(idu, nombre, contra, rol) #IDs de los Mazos del Usuario
+            aux = True
+        
+        if aux == False:
+            sock.send(b'00014creusOKnofound')
             
         else:
-            size = len(aux2) + len(service) + len(aux1) + 2
-
-            msg = getSize(size) + 'loginOK' + aux2 + aux1
-            sock.send(msg.encode("utf-8"))
+            size = len(aux1) + len(service)
+            msg = getSize(size) + 'creusOK' + aux1
+            sock.send(msg.encode("utf-8")) 
+            
 finally:
     print("cerrando socket")
     sock.close()
