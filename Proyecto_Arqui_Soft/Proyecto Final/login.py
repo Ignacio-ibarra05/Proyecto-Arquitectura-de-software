@@ -22,7 +22,7 @@ def authenticate(username, password):
         for user in usuarios:
             if user["Nombre"] == username and user["Contra"] == password:
                 return user["ID_Usuario"], user["Rol"]
-    return False
+    return False, False
 
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
