@@ -1,0 +1,467 @@
+{
+    "usuarios": [
+        {
+            "ID_Usuario": "0000",
+            "Nombre": "Admin",
+            "Contra": "Admin",
+            "Rol": "admi"
+        },
+        {
+            "ID_Usuario": "0001",
+            "Nombre": "ignacio",
+            "Contra": "12345",
+            "Rol": "usu",
+            "Coleccion": [
+                {
+                    "ID_carta": 1
+                },
+                {
+                    "ID_carta": 2
+                },
+                {
+                    "ID_carta": 3
+                },
+                {
+                    "ID_carta": 4
+                },
+                {
+                    "ID_carta": 5
+                },
+                {
+                    "ID_carta": 6
+                },
+                {
+                    "ID_carta": 7
+                },
+                {
+                    "ID_carta": 8
+                },
+                {
+                    "ID_carta": 9
+                },
+                {
+                    "ID_carta": 11
+                },
+                {
+                    "ID_carta": 12
+                },
+                {
+                    "ID_carta": 13
+                },
+                {
+                    "ID_carta": 14
+                },
+                {
+                    "ID_carta": 15
+                },
+                {
+                    "ID_carta": 16
+                },
+                {
+                    "ID_carta": 17
+                },
+                {
+                    "ID_carta": 18
+                },
+                {
+                    "ID_carta": 19
+                },
+                {
+                    "ID_carta": 20
+                },
+                {
+                    "ID_carta": 21
+                },
+                {
+                    "ID_carta": 23
+                },
+                {
+                    "ID_carta": 25
+                },
+                {
+                    "ID_carta": 26
+                },
+                {
+                    "ID_carta": 27
+                },
+                {
+                    "ID_carta": 28
+                },
+                {
+                    "ID_carta": 29
+                },
+                {
+                    "ID_carta": 30
+                },
+                {
+                    "ID_carta": 31
+                }
+            ],
+            "Mazos": [
+                {
+                    "Nombre": "Fuego",
+                    "ID_Mazo": "1001",
+                    "Cartas": [
+                        {
+                            "ID_carta": 2
+                        },
+                        {
+                            "ID_carta": 9
+                        }
+                    ]
+                },
+                {
+                    "Nombre": "Agua",
+                    "ID_Mazo": "1002",
+                    "Cartas": [
+                        {
+                            "ID_carta": 3
+                        },
+                        {
+                            "ID_carta": 8
+                        },
+                        {
+                            "ID_carta": 11
+                        }
+                    ]
+                },
+                {
+                    "Nombre": "Lucha",
+                    "ID_Mazo": "1003",
+                    "Cartas": [
+                        {
+                            "ID_carta": 17
+                        },
+                        {
+                            "ID_carta": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "ID_Usuario": "0002",
+            "Nombre": "jaira",
+            "Contra": "5678",
+            "Rol": "usu",
+            "Coleccion": [
+                {
+                    "ID_carta": 3
+                },
+                {
+                    "ID_carta": 4
+                },
+                {
+                    "ID_carta": 8
+                },
+                {
+                    "ID_carta": 9
+                },
+                {
+                    "ID_carta": 16
+                },
+                {
+                    "ID_carta": 19
+                },
+                {
+                    "ID_carta": 20
+                },
+                {
+                    "ID_carta": 12
+                },
+                {
+                    "ID_carta": 31
+                }
+            ],
+            "Mazos": [
+                {
+                    "Nombre": "Fantasma",
+                    "ID_Mazo": "2001",
+                    "Cartas": [
+                        {
+                            "ID_carta": 12
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "ID_Usuario": "0003",
+            "Nombre": "Bastian",
+            "Contra": "3456",
+            "Rol": "usu",
+            "Coleccion": [
+                {
+                    "ID_carta": 2
+                },
+                {
+                    "ID_carta": 5
+                },
+                {
+                    "ID_carta": 9
+                },
+                {
+                    "ID_carta": 10
+                },
+                {
+                    "ID_carta": 11
+                },
+                {
+                    "ID_carta": 13
+                },
+                {
+                    "ID_carta": 17
+                },
+                {
+                    "ID_carta": 18
+                }
+            ],
+            "Mazos": []
+        },
+        {
+            "ID_Usuario": "0004",
+            "Nombre": "Benjamin",
+            "Contra": "7812",
+            "Rol": "usu",
+            "Coleccion": [
+                {
+                    "ID_carta": 1
+                },
+                {
+                    "ID_carta": 3
+                },
+                {
+                    "ID_carta": 8
+                },
+                {
+                    "ID_carta": 9
+                },
+                {
+                    "ID_carta": 10
+                },
+                {
+                    "ID_carta": 14
+                },
+                {
+                    "ID_carta": 17
+                },
+                {
+                    "ID_carta": 19
+                }
+            ],
+            "Mazos": []
+        },
+        {
+            "ID_Usuario": "0005",
+            "Nombre": "Prueba",
+            "Contra": "Prueba",
+            "Rol": "usu",
+            "Coleccion": [],
+            "Mazos": []
+        },
+        {
+            "ID_Usuario": "0007",
+            "Nombre": "Prueba2",
+            "Contra": "Prueba2",
+            "Rol": "usu",
+            "Coleccion": [],
+            "Mazos": []
+        },
+        {
+            "ID_Usuario": "0008",
+            "Nombre": "Prueba3",
+            "Contra": "Prueba3",
+            "Rol": "usu",
+            "Coleccion": [],
+            "Mazos": []
+        }
+    ],
+    "cartas": [
+        {
+            "ID_carta": 1,
+            "Nombre": "Bulbasaur",
+            "Tipo": "Planta",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 2,
+            "Nombre": "Charmander",
+            "Tipo": "Fuego",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 3,
+            "Nombre": "Squirtle",
+            "Tipo": "Agua",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 4,
+            "Nombre": "Pikachu",
+            "Tipo": "Electrico",
+            "Raresa": "raro"
+        },
+        {
+            "ID_carta": 5,
+            "Nombre": "Geodude",
+            "Tipo": "Roca",
+            "Raresa": "raro"
+        },
+        {
+            "ID_carta": 6,
+            "Nombre": "Meowth",
+            "Tipo": "Normal",
+            "Raresa": "raro"
+        },
+        {
+            "ID_carta": 7,
+            "Nombre": "Jigglypuff",
+            "Tipo": "Hada",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 8,
+            "Nombre": "Psyduck",
+            "Tipo": "Agua",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 9,
+            "Nombre": "Growlithe",
+            "Tipo": "Fuego",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 10,
+            "Nombre": "Machop",
+            "Tipo": "Lucha",
+            "Raresa": "raro"
+        },
+        {
+            "ID_carta": 11,
+            "Nombre": "Tentacool",
+            "Tipo": "Agua",
+            "Raresa": "raro"
+        },
+        {
+            "ID_carta": 12,
+            "Nombre": "Gastly",
+            "Tipo": "Fantasma",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 13,
+            "Nombre": "Onix",
+            "Tipo": "Roca",
+            "Raresa": "mitico"
+        },
+        {
+            "ID_carta": 14,
+            "Nombre": "Drowzee",
+            "Tipo": "Psiquico",
+            "Raresa": "raro"
+        },
+        {
+            "ID_carta": 15,
+            "Nombre": "Voltorb",
+            "Tipo": "Electrico",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 16,
+            "Nombre": "Cubone",
+            "Tipo": "Tierra",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 17,
+            "Nombre": "Hitmonlee",
+            "Tipo": "Lucha",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 18,
+            "Nombre": "Koffing",
+            "Tipo": "Veneno",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 19,
+            "Nombre": "Dratini",
+            "Tipo": "Dragon",
+            "Raresa": "mitico"
+        },
+        {
+            "ID_carta": 20,
+            "Nombre": "Porygon",
+            "Tipo": "Normal",
+            "Raresa": "legendario"
+        },
+        {
+            "ID_carta": 21,
+            "Nombre": "Rattata",
+            "Tipo": "Normal",
+            "Raresa": "legendario"
+        },
+        {
+            "ID_carta": 22,
+            "Nombre": "Ekans",
+            "Tipo": "Veneno",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 23,
+            "Nombre": "Sandshrew",
+            "Tipo": "Tierra",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 24,
+            "Nombre": "Abra",
+            "Tipo": "Ps\u00edquico",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 25,
+            "Nombre": "Hitmonchan",
+            "Tipo": "Lucha",
+            "Raresa": "raro"
+        },
+        {
+            "ID_carta": 26,
+            "Nombre": "Pidgey",
+            "Tipo": "Volador",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 27,
+            "Nombre": "Spearow",
+            "Tipo": "Volador",
+            "Raresa": "raro"
+        },
+        {
+            "ID_carta": 28,
+            "Nombre": "Ekans",
+            "Tipo": "Veneno",
+            "Raresa": "raro"
+        },
+        {
+            "ID_carta": 29,
+            "Nombre": "Sandshrew",
+            "Tipo": "Tierra",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 30,
+            "Nombre": "Nidoran",
+            "Tipo": "Veneno",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 31,
+            "Nombre": "Mewtow",
+            "Tipo": "Psiquico",
+            "Raresa": "legendario"
+        }
+    ]
+}
