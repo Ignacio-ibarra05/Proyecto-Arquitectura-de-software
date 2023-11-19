@@ -250,30 +250,6 @@
                 }
             ],
             "Mazos": []
-        },
-        {
-            "ID_Usuario": "0005",
-            "Nombre": "Prueba",
-            "Contra": "Prueba",
-            "Rol": "usu",
-            "Coleccion": [],
-            "Mazos": []
-        },
-        {
-            "ID_Usuario": "0007",
-            "Nombre": "Prueba2",
-            "Contra": "Prueba2",
-            "Rol": "usu",
-            "Coleccion": [],
-            "Mazos": []
-        },
-        {
-            "ID_Usuario": "0008",
-            "Nombre": "Prueba3",
-            "Contra": "Prueba3",
-            "Rol": "usu",
-            "Coleccion": [],
-            "Mazos": []
         }
     ],
     "cartas": [
