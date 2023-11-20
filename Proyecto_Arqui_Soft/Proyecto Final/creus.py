@@ -57,6 +57,16 @@ def Size3(a):
         size = '00' + a
     return size
 
+def verificar(nom):
+    a = False
+    with open('BDD/BDD.json') as file:
+        read = json.load(file)
+    for i in read['usuarios']:
+        if i["Nombre"] == nom:
+            a = True
+    return a
+
+
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 host = 'localhost'
 port = 5002
@@ -74,15 +84,19 @@ try:
         idu = ID_Usuario()
         rol = 'usu'
         service = 'creus'
-
-        aux = Usuarios(idu, nombre, contra, rol) #IDs de los Mazos del Usuario
+        aux = False
+        v = verificar(nombre)
+        aux1 = ''
+        if v == False:
+            aux1 = Usuarios(idu, nombre, contra, rol) #IDs de los Mazos del Usuario
+            aux = True
         
         if aux == False:
             sock.send(b'00014creusOKnofound')
             
         else:
-            size = len(aux) + len(service)
-            msg = getSize(size) + 'creusOK' + aux
+            size = len(aux1) + len(service)
+            msg = getSize(size) + 'creusOK' + aux1
             sock.send(msg.encode("utf-8")) 
             
 finally:

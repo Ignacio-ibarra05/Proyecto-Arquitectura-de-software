@@ -58,30 +58,46 @@ def cartas(ID): #ID -> Nombre Carta
                 return c 
 
 def agregar(cod, ID):
-     # Cargar el JSON desde el archivo
-    with open('BDD/BDD.json', 'r') as archivo:
-        datos = json.load(archivo)
-    
-    # ID del usuario y ID de la carta que quieres eliminar
-    id_usuario = cod
-    id_carta_a_agregar = ID
     a = 0
-    # Encontrar el usuario en la lista de usuarios
-    for usuario in datos['usuarios']:
-        if usuario['ID_Usuario'] == id_usuario:
-            coleccion_usuario = usuario['Coleccion']
-            # agregar id carta a la coleccion del usuario
-            data = {"ID_carta": id_carta_a_agregar}
-            coleccion_usuario.append(data)
-            a = 1
+    b = verificar(cod, ID)
+    if b == False:
+        # Cargar el JSON desde el archivo
+        with open('BDD/BDD.json', 'r') as archivo:
+            datos = json.load(archivo)
+    
+        # ID del usuario y ID de la carta que quieres eliminar
+        id_usuario = cod
+        id_carta_a_agregar = ID
+        # Encontrar el usuario en la lista de usuarios
+        for usuario in datos['usuarios']:
+            if usuario['ID_Usuario'] == id_usuario:
+                coleccion_usuario = usuario['Coleccion']
+                # agregar id carta a la coleccion del usuario
+                data = {"ID_carta": id_carta_a_agregar}
+                coleccion_usuario.append(data)
+                a = 1
             
 
-    # Guardar los cambios en el archivo JSON
-    with open('BDD/BDD.json', 'w') as archivo:
-        json.dump(datos, archivo, indent=4)
+        # Guardar los cambios en el archivo JSON
+        with open('BDD/BDD.json', 'w') as archivo:
+            json.dump(datos, archivo, indent=4)
 
     return a
 
+def verificar(cod, ID):
+    with open('BDD/BDD.json', 'r') as archivo:
+        datos = json.load(archivo)
+
+    for usuario in datos['usuarios']:
+        if usuario['ID_Usuario'] == cod:
+            coleccion_usuario = usuario['Coleccion']
+            carta_encontrada = False
+            # Verificar si la carta está en la colección del usuario
+            for carta in coleccion_usuario:
+                if carta['ID_carta'] == ID:
+                    carta_encontrada = True
+                    break  # Salir del bucle una vez que se encuentra la carta en la colección
+    return carta_encontrada
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 host = 'localhost'
@@ -119,7 +135,7 @@ try:
             
         else:
             size = len("Carta agregada Exitosamente") + len(service)
-            msg = getSize(size) + 'edcolOK' + car 
+            msg = getSize(size) + 'edcolOK' + "Carta agregada Exitosamente" 
             #print(msg)
             sock.send(msg.encode("utf-8")) 
         

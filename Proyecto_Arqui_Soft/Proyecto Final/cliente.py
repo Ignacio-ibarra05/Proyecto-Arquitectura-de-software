@@ -24,8 +24,7 @@ def inicio_Usuario(): #Listo
 def inicio_Admin():
     print("Ingresar la Opción que quiere realizar: ")
     print("(1) Eliminar Usuario")
-    print("(2) Eliminar carta")
-    print("(3) Listar Cartas")
+    print("(2) Editar carta")
     print("(9) Salir")
 
 def edicion_coleccion(): #Listo
@@ -47,10 +46,16 @@ def edicion_mazo(): #listo
     print("(2) Eliminar carta")
     print("(9) Salir")
 
+def edicion_cartas():
+    print("Ingrese la Opción que quiere realizar:")
+    print("(1) Agregar carta")
+    print("(2) Eliminar carta")
+    print("(9) Salir")
+
 def acciones_A(op):
     if op == '2': 
         service='elcar'
-        print("\n----Eliminar Carta----")
+        print("\n----Editar Cartas----")
 
         service2 = 'lista'
         size2 = len(service2) + 2
@@ -58,32 +63,53 @@ def acciones_A(op):
         sock.send(msg.encode('utf-8'))
         resp = sock.recv(4096)
         data1 = resp.decode()
-        print(data1[10:12])
+        #print(data1[10:12])
         if data1[10:12] == "OK":
             if data1[12:] == "nofound":
                 print("No hay cartas registradas")
             else:
+                data1 = data1[12:]
                 data1 = data1.split(';')
                 for i in data1:
                     print(i)
-                
-                car = input("ingresar ID carta a eliminar: ")
-                size = len(car)+len(service)
-                msg = getSize(size) + service + car
+                edicion_cartas()
+                op1 = input("ingresar opción a realizar: ")
+                if op1 == '2':
+                    print("\n")
+                    car = input("ingresar ID carta a eliminar: ")
+                    size = len(car)+len(service) + len(op) + 1
+                    msg = getSize(size) + service + op1 + ',' + car
 
-                sock.send(msg.encode('utf-8'))
-                resp = sock.recv(4096)
-                data = resp.decode()
+                    sock.send(msg.encode('utf-8'))
+                    resp = sock.recv(4096)
+                    data = resp.decode()
 
-                if data[10:11]=="OK":
-                    if data[12:]=="nofound":
-                        print("Usuario no encontrado")
-                    else:
-                        print("Usuario Eliminado")
+                    if data[10:12]=="OK":
+                        if data[12:]=="nofound":
+                            print("Carta no encontrada")
+                        else:
+                            print("Carta Eliminada")
+
+                elif op1 == '1':
+                    print("\n")
+                    print("---Ingresar carta---")
+                    n = input("ingresar Nombre: ")
+                    t = input("ingresar Tipo: ")
+                    r = input("ingresar Rareza: ")
+                    size = len(t)+len(service)+ len(n) + len(r) + 3
+                    msg = getSize(size) + service +  op1+ ',' + n + ',' + t + ',' + r
+
+                    sock.send(msg.encode('utf-8'))
+                    resp = sock.recv(4096)
+                    data = resp.decode()
+                    #print(data[10:])
+                    if data[10:12]=="OK":
+                        if data[12:]=="nofound":
+                            print("Carta invalida")
+                        else:
+                            print("Carta agregada")
         else:
-            print("Servicio 'Eliminar Carta' no conectado")
-    elif op == '9':
-        print("saliendo")
+            print("Servicio 'Editar Cartas' no conectado")
     elif op == '1':
         service='eluse'
         print("\n----Eliminar Usuario----")
@@ -94,11 +120,12 @@ def acciones_A(op):
         sock.send(msg.encode('utf-8'))
         resp = sock.recv(4096)
         data1 = resp.decode()
-        print(data1[10:12])
+        #print(data1[10:12])
         if data1[10:12] == "OK":
             if data1[12:] == "nofound":
                 print("No hay usuarios creados")
             else:
+                data1 = data1[12:]
                 data1 = data1.split(';')
                 for i in data1:
                     print(i)
