@@ -23,8 +23,8 @@ def inicio_Usuario(): #Listo
 
 def inicio_Admin():
     print("Ingresar la Opción que quiere realizar: ")
-    print("(1) Eliminar Usuario (PRÓXIMAMENTE)")
-    print("(2) Eliminar carta (PRÓXIMAMENTE)")
+    print("(1) Eliminar Usuario")
+    print("(2) Eliminar carta")
     print("(3) Listar Cartas")
     print("(9) Salir")
 
