@@ -167,9 +167,6 @@
                     "ID_carta": 20
                 },
                 {
-                    "ID_carta": 12
-                },
-                {
                     "ID_carta": 31
                 }
             ],
@@ -177,9 +174,14 @@
                 {
                     "Nombre": "Fantasma",
                     "ID_Mazo": "2001",
+                    "Cartas": []
+                },
+                {
+                    "Nombre": "Dragon",
+                    "ID_Mazo": "2002",
                     "Cartas": [
                         {
-                            "ID_carta": 12
+                            "ID_carta": 19
                         }
                     ]
                 }
@@ -249,6 +251,22 @@
                     "ID_carta": 19
                 }
             ],
+            "Mazos": []
+        },
+        {
+            "ID_Usuario": "0005",
+            "Nombre": "Prueba",
+            "Contra": "Prueba",
+            "Rol": "usu",
+            "Coleccion": [],
+            "Mazos": []
+        },
+        {
+            "ID_Usuario": "0007",
+            "Nombre": "Prueba2",
+            "Contra": "Prueba2",
+            "Rol": "usu",
+            "Coleccion": [],
             "Mazos": []
         }
     ],
@@ -380,12 +398,6 @@
             "Raresa": "legendario"
         },
         {
-            "ID_carta": 22,
-            "Nombre": "Ekans",
-            "Tipo": "Veneno",
-            "Raresa": "comun"
-        },
-        {
             "ID_carta": 23,
             "Nombre": "Sandshrew",
             "Tipo": "Tierra",
@@ -438,6 +450,24 @@
             "Nombre": "Mewtow",
             "Tipo": "Psiquico",
             "Raresa": "legendario"
+        },
+        {
+            "ID_carta": 32,
+            "Nombre": "Mew",
+            "Tipo": "Psiquico",
+            "Raresa": "Legendario"
+        },
+        {
+            "ID_carta": 33,
+            "Nombre": "Ekans",
+            "Tipo": "Veneno",
+            "Raresa": "comun"
+        },
+        {
+            "ID_carta": 34,
+            "Nombre": "Lugia",
+            "Tipo": "Volador",
+            "Raresa": "Legendario"
         }
     ]
 }
