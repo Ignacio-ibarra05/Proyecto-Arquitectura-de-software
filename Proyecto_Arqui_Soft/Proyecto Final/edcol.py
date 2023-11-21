@@ -50,12 +50,13 @@ def Colec(cod, ID): #cod -> ID usuario, ID -> ID carta
 def cartas(ID): #ID -> Nombre Carta
     with open('BDD/BDD.json') as file:
         reader = json.load(file)
-        cartas = reader['cartas']
-        for row in cartas:
-            if row["Nombre"] == ID:
-                c = row["ID_carta"]
-                print(c)
-                return c 
+    cartas = reader['cartas']
+    c = 9999
+    for row in cartas:
+        if row["Nombre"] == ID:
+            c = row["ID_carta"]
+            print(c)
+    return c 
 
 def agregar(cod, ID):
     a = 0
@@ -122,8 +123,10 @@ try:
 
         if op == '1': #Agregar Carta
             ID_carta = cartas(nombre)
-            if ID_carta != False:
+            if ID_carta != 9999:
                 car = agregar(cod, ID_carta)
+            else:
+                car = 0
 
         else: #Eliminar Carta
             ID_carta = cartas(nombre)
